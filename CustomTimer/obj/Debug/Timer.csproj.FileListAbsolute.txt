@@ -1,0 +1,17 @@
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\Timer.csprojResolveAssemblyReference.cache
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\MainWindow.g.cs
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\TimerControl\TimerUserControl.g.cs
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\App.g.cs
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch_MarkupCompile.cache
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch_MarkupCompile.lref
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch.exe
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch.pdb
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\bin\Debug\StopWatch.exe.config
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\bin\Debug\StopWatch.exe
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\bin\Debug\StopWatch.pdb
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\MainWindow.baml
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\TimerControl\TimerUserControl.baml
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch.g.resources
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\StopWatch.Properties.Resources.resources
+C:\Users\Lorna\documents\visual studio 2015\Projects\StopWatch\StopWatch\obj\Debug\Timer.csproj.GenerateResource.Cache

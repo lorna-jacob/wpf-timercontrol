@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="Timer.TimerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Timer"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <!-- To do: Define hard-coded colors are static resource; also use binding as much as possible -->
+    <UserControl.Resources>
+        <local:TickToAngleConverter x:Key="tickConverter" />
+        <Style TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Grid>
+                            <!-- Define the inner and outer ellipses -->
+                            <Ellipse Fill="LightGray" Stroke="LightGray"/>
+                            <Ellipse Fill="White" Stroke="LightGray" Margin="5" />
+
+                            <!-- Define the timer arc -->
+                            <local:TimerArc Stroke="{TemplateBinding BorderBrush}" StrokeThickness="5" Margin="0">
+                                <local:TimerArc.Start>
+                                    <MultiBinding Converter="{StaticResource tickConverter}">
+                                        <Binding Path="Minimum" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="." RelativeSource="{RelativeSource TemplatedParent}"/>
+                                    </MultiBinding>
+                                </local:TimerArc.Start>
+                                <local:TimerArc.End>
+                                    <MultiBinding Converter="{StaticResource tickConverter}">
+                                        <Binding Path="Value" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="." RelativeSource="{RelativeSource TemplatedParent}"/>
+                                    </MultiBinding>
+                                </local:TimerArc.End>
+                            </local:TimerArc>
+
+                            <!-- Define the Timer text -->
+                            <TextBlock x:Name="counter"
+                                       Text="{Binding Value, RelativeSource={RelativeSource TemplatedParent},StringFormat=\{0:0\}}"
+                                       Foreground="DarkGray"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Center"
+                                       FontFamily="Arial Narrow"
+                                       FontSize="70"
+                                       FontWeight="Bold"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Viewbox>
+        <DockPanel>
+            <ProgressBar Height="300" Width="300" x:Name="timer"
+                         Minimum="0" Maximum="60" Value="0" DockPanel.Dock="Top" BorderBrush="DodgerBlue">
+                <ProgressBar.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#FFF9F9F9" Offset="0"/>
+                        <GradientStop Color="#FFd9d9d9" Offset="1"/>
+                    </LinearGradientBrush>
+                </ProgressBar.Background>
+            </ProgressBar>
+            <Grid DockPanel.Dock="Bottom" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnStart" Grid.Column="0" Margin="0" BorderBrush="White" Height="50" Background="White" Foreground="Gray" FontWeight="Bold">START</Button>
+                <Button x:Name="btnStop" Grid.Column="1" Margin="0" BorderBrush="White" Height="50" Background="White" Foreground="Gray" FontWeight="Bold">STOP</Button>
+            </Grid>
+        </DockPanel>
+    </Viewbox>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Button.Click">
+            <BeginStoryboard>
+                <Storyboard RepeatBehavior="1">
+                    <DoubleAnimation From="{Binding Maximum,ElementName=timer}"
+                                     To="{Binding Minimum,ElementName=timer}"
+                                     Storyboard.TargetName="timer"
+                                     Storyboard.TargetProperty="Value"
+                                     Duration="0:1">
+
+                    </DoubleAnimation>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+</UserControl>
